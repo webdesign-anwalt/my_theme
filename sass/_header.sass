@@ -1,0 +1,50 @@
+/* Header */
+
+#container
+	width:100vw
+	margin:0 auto
+
+#mm-header
+	display:flex
+	justify-content:center
+	align-items:center
+	min-height:150px
+	background: url("http://www.ent-schuldigung.de/wp-content/uploads/JensMüller.jpg"), url("http://www.ent-schuldigung.de/wp-content/uploads/johnmiehler-header.jpg")
+    repeat: no-repeat, no-repeat
+    size: auto 100%, auto 100%
+    position-x: left, 101%
+    position-y: top, top
+    origin: initial  
+
+
+	h2
+		font-size: 3rem
+		padding:0
+		margin:0
+
+	h3
+		font-size: 1.5rem
+		padding:0
+		margin:0
+		letter-spacing: 3.7px
+    	margin-top: -10px
+    	font-weight: 100
+
+.top-widget
+	background:orange
+	display:flex
+	color:brown
+
+#responsive_current_menu_item
+	display:none	
+
+@media screen and (max-width:$handy)
+	#mm-header
+		background:white
+
+	h2
+		font-size: 1.5rem
+		
+	h3
+		font-size: 1rem
+		letter-spacing: 1.3px

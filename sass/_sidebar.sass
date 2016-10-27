@@ -1,0 +1,282 @@
+/* Sidebar */
+
+/* Sidebar modules for boxing content */
+.sidebar-module 
+  padding: 15px
+  margin: 0 -15px 15px
+
+.widget-wrapper
+  background:inherit
+
+#widgets
+  max-width:90vw
+  max-height:90vh
+  //background:linear-gradient(to bottom, #d4af37 0%,#ae9447 100%)
+  background:rgba(0,0,0,0.5)
+  color:white
+  padding:$abstand-klein
+  margin:$abstand-klein
+  position:fixed
+  top:-2200px // ausser Sichtweite
+  opacity: 0
+  left:50%
+  border-radius:5px
+  font-family: $grundschrift
+  box-sizing:border-box
+  display:flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-between
+  z-index:2000
+  overflow:hidden
+  font-size: $schrift-size * 0.9
+
+#widgets > *
+  flex:1 1 
+
+// Schalter, Toggle und so
+
+#sidebar-toggle
+  position:absolute
+  top:-5000px // nicht sichtbar
+  opacity: 0
+
+label.toggle
+  position:fixed
+  top:250px
+  right:50px
+  display:block
+  border-radius:50%
+  padding:15px
+  color:white
+  cursor:pointer
+  z-index:2000
+  font-family: $ueberschrift
+  animation:  sidbar-toggle-animation 3s
+    delay:3s 
+    fill-mode:forwards
+  box-sizing:border-box
+  display:flex
+  justify-content: center
+  align-items:center
+  width:65px
+  height:65px
+  span
+    display: block
+
+  &:hover:after
+    animation:spinner infinite 0.5s linear
+
+  &:before // Kreisform im Hintergrund
+    content:""
+    position:absolute
+    top:0px
+    left:0px
+    background: linear-gradient(to bottom, #d4af37 0%,#ae9447 100%)
+    display:block
+    width:65px
+    height:65px
+    border-radius:50%
+    z-index:-1
+  &:after // rotierender Rahmen
+    content:""
+    position:absolute
+    top:-2px
+    left::-2px
+    display:block
+    width:65px
+    height:65px  
+    border-radius:50%
+    border: 2px solid transparent
+    border-top-color:$gold
+    border-bottom-color:$gold
+    background:rgba(0,0,0,0)
+    animation:spinner infinite 2s linear
+
+@media screen and (max-width:$handy)
+  label.toggle
+    top:auto
+    bottom:12px
+    right:12px
+  #widgets
+    max-width:95%
+  #text-15
+    display: none  
+@keyframes spinner
+  0%
+    transform:rotate(0deg) scale(1.1)
+  50%
+    transform:rotate(180deg) scale(1.25)
+  100%
+    transform:rotate(360deg) scale(1.1)
+
+@keyframes sidebar-toggle-animation
+  0%
+    opacity: 0
+    transform:translateY(-500px)
+
+  71%
+    opacity: 1
+    transform:translateY(20px)
+  100%
+    transform:translateY(0px)
+
+// aktivierter Zustand
+input#sidebar-toggle:checked ~ #widgets // sidebar einblenden
+  top:50%
+  animation: 
+    name:bring-sidebar-in
+    duration:1s
+    timing-function: ease-in
+    fill-mode:forwards
+    iteration-count:1
+
+@keyframes bring-sidebar-in
+  0%
+    transform:translate(-500%,-50%) rotate(-90deg)
+    opacity: 0
+  80%
+    transform:translate(-45%,-50%) rotate(4deg)
+    
+  100%
+    transform:translate(-50%, -50%)
+    opacity: 1
+
+
+input#sidebar-toggle:checked ~ label.toggle:before
+  background: #006180
+  animation: 
+    name:toggle-me-out
+    duration:0.7s
+    timing-function: linear
+    fill-mode:forwards
+    iteration-count:1
+    
+
+@keyframes toggle-me-out
+  0%
+    transform:scale(0)
+    opacity:(1)
+    
+  100%
+    transform:scale(200)
+    opacity:(0.8)
+ 
+.info-slider
+    position:absolute
+    top:0
+    right:0px
+    bottom:0
+    transform: translateX(200%)
+    width:50%
+    transition:all 0.5s ease-in
+    opacity: 0
+    background:$dunkel
+    padding:$abstand-klein
+
+.click-element:hover .info-slider
+    opacity: 1 
+    transform: translateX(0%)
+
+// Einzelne Widgets
+#text-16 //M&M Header
+  flex: 1 1 100%
+
+#text-20 // So finden Sie uns
+  flex 1 1 50%
+  display:none
+  &:focus
+    dislay:block
+
+.vcard
+    h2
+        font-size:1.2rem
+        letter-spacing:0.1em
+        margin:0
+        padding:15px 0 10px
+
+// einzelne Teile
+.widget-wrapper
+  padding:$abstand-klein
+  flex:1 //gleichmäßig verteilen
+  background:$mittel
+.textwidget
+  padding:5px
+
+.widget_text 
+  padding: $abstand-klein
+  border-radius: 4px
+
+  p:last-child, ul:last-child, ol:last-child 
+    margin-bottom: 0
+
+
+  img, .widget select 
+		max-width:100%
+
+.widget 
+  ul 
+    padding: 0
+    margin: 0 0 0 1.2em
+
+    li 
+      padding: 0.2em 0 .2em
+
+label.screen-reader-text 
+    display: none
+
+
+#wp-calendar caption 
+    text-align: center
+    margin-bottom: 10px
+
+
+/* TOP-WIDGET */
+#top-widget
+    background-color: orange
+    padding: 3px
+    top: 0
+    width: 100%
+
+#top-widget .textwidget
+    justify-content: flex-end
+    margin-right:20px
+
+    .textwidget 
+      justify-content: flex-end
+      margin-right: 20px
+      align-items: center
+      display: flex
+      flex-direction: row
+
+    .widget_text 
+        max-width: 100%
+        padding:0
+        background:inherit
+
+    p 
+      margin-bottom: 0
+      margin-left: 0
+      margin-right: 5px
+      margin-top: 0
+
+    a 
+      align-self: center
+      background-attachment: scroll
+      background-clip: border-box
+      background-color: #3f3832
+      background-image: none
+      background-origin: padding-box
+      background-position-x: 0
+      background-position-y: 0
+      background-repeat: repeat
+      background-size: auto auto
+      color: white
+      display: inline-block
+      flex-basis: 0
+      flex-grow: 0
+      flex-shrink: 0
+      padding-bottom: 3px
+      padding-left: 5px
+      padding-right: 5px
+      padding-top: 3px

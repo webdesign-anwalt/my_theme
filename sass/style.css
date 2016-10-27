@@ -1,0 +1,115 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.clear::before, .clear::after, .entry-content::before, .entry-content::after, .comment-content::before, .comment-content::after, .site-header::before, .site-header::after, .site-content::before, .site-content::after, .site-footer::before, .site-footer::after {
+  content: "";
+  display: table;
+}
+
+body {
+  line-height: 1;
+  width: 100%;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.5em;
+  font-size: 1.4em;
+}
+
+td {
+  padding: 3px 10px;
+}
+
+ul {
+  margin: 30px 5px 30px 20px;
+  list-style-type: square;
+  font-size: inherit;
+  line-height: 1.5em;
+}
+
+ul > ul {
+  margin-left: 20px;
+}
+
+/* Mediaquerys */
+/* Header */
+/* Navigation */
+/* Sidebar */
+/* Post */
+/* Footer */
+body {
+  font-family: "roboto slab";
+  background: #ccc;
+  z-index: 10;
+  z-index-width: 100%;
+  z-index-font-size: 1em;
+  z-index-box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  color: inherit;
+  line-height: 1em;
+}
+
+h2 {
+  padding-bottom: 15px;
+  margin-top: 30px;
+  font-family: "oswald";
+}
+
+h3 {
+  font-size: 1.1em;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  font-family: "oswald";
+  line-height: 1.5em;
+}
+
+h3:first-child {
+  padding-top: 10px;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}

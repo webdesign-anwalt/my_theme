@@ -1,0 +1,188 @@
+/* Blog posts und Comments */
+.hentry
+ 	padding:0 
+  max-width: $breite
+
+  h2
+    color:$dunkel
+    font-size:2rem
+  
+.post-entry, #content-blog
+  max-width:$breite
+  margin:0 auto
+
+.blog-post 
+  margin-bottom: 60px
+  max-width:$breite
+
+
+#content
+  margin:0 auto
+  max-width:$breite
+
+@media screen and (max-width:$handy)
+  #content, .hentry, .post-entry
+    max-width: 100%
+    width:100%
+    padding:5px
+
+.single.blog-post 
+		margin:0
+
+.post-title 
+  margin-bottom: 1rem
+  margin-top: 3rem
+  font-family: $ueberschrift
+  font-size:3rem
+  color:$mittel
+  
+h1.blog-post-title 
+  margin-bottom: 10px
+
+.blog-post-meta 
+  margin-bottom: 20px
+  color: #999
+  display: none
+
+.hervorhebung
+    font-family: "oswald"
+    font-size: 3.1rem
+    line-height: 1.2em
+    padding-bottom: 50px
+    padding-left: 30px
+    padding-right: 30px
+    padding-top: 50px
+    text-align: center
+
+    span
+      color:orange
+.li
+  padding-bottom:1.4em
+
+.p-tags
+		margin: 1em 0
+
+.nocomments 
+		margin-top: 2em
+
+@media screen and (max-width:$handy)
+  .post-title 
+
+  .post-entry
+    max-width:auto
+    padding:8px
+
+
+.zitat-jens 
+    background: rgba(0, 0, 0, 0) url("http://www.ent-schuldigung.de/wp-content/uploads/JensMüller.jpg") no-repeat scroll left top / auto 100%
+    padding-left: 150px
+
+
+.zitat-john 
+    background: rgba(0, 0, 0, 0) url("http://www.ent-schuldigung.de/wp-content/uploads/JohnMiehler1-e1412165986650.jpg") no-repeat scroll left top / auto 100%
+    padding-left: 150px
+
+#autorbox
+  margin-top:10px
+  border-top:1px solid #ccc
+  padding-top:20px
+  font-size:15px
+  line-height:1.2em
+
+.alignleft
+  margin:0 10px 10px 0
+  float:left
+
+
+.linkbereich 
+  width:200px;
+  float : right
+  padding:5px
+  margin-left:$abstand-klein
+
+@media screen and (max-width:$handy)
+  .alignleft
+    width:100%
+    float:none
+    margin:0
+
+/* Comments */
+
+#respond 
+  max-width:$breite
+  margin:0 auto
+
+ol#commentlist 
+    margin: 0
+    padding: 0
+
+li.comment  
+	list-style:none
+	margin: 2em 0
+	padding: 1em
+	border: 1px solid #e8e8e8
+
+img.avatar 
+    float: right
+    border: 1px solid #ddd
+    border-radius: 50%
+
+cite.fn 
+    font-size: 24px
+
+span.says 
+    display: none
+
+.comment-meta 
+    font-size: small
+    margin: 0 0 1em
+    display: block
+
+
+h3#reply-title 
+    margin-top: 1em
+
+
+input#author, input#email, input#url, .comment-form textarea 
+    display: block
+    border: 1px solid #ddd
+    
+
+.comment-form textarea 
+ 		max-width: 100%
+
+.comment-form label 
+    font-size: 13px
+
+
+input#searchsubmit, input#submit 
+	color: #333333
+	background-color: #FFFFFF
+	background-image: linear-gradient(to bottom, #FFFFFF, #EBE9E9)
+	border-radius: 3px
+	border: 1px solid #ccc
+	font-size:14px
+	padding: 0.3em .6em 0.2em
+	letter-spacing: 0.02em
+	
+
+input#searchsubmit:hover, input#submit:hover 
+    color: #333333
+    background-color: #fff
+    background-image: linear-gradient(to bottom, #EBE9E9, #FFFFFF)
+
+
+input#submit 
+    padding: .7em 1.6em
+    display: block
+    margin: 1em 0 0
+
+
+input#s 
+    border: 1px solid #ccc
+    padding: 0.3em 0.3em 0.2em
+
+.kommentarhinweis
+  max-width:$breite
+  margin:0 auto
+  position:relative

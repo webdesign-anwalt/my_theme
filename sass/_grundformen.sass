@@ -1,0 +1,95 @@
+/* grundformen */
+
+.flexkarten
+	display:flex
+	flex-direction:row
+	justify-content: space-between
+	flex-wrap:wrap
+
+	.volle-breite
+		width:100%
+		flex: 1 1 100%
+.center
+	margin-right:auto
+	margin-left:auto
+	
+.flexkarten > *
+	box-sizing:border-box
+
+.zwei > *
+	width:50%
+	padding-right:5%
+
+	&:nth-child(2)
+		padding-right:0
+.drei > *
+	width:30%
+	min-width:$handy
+	padding-right:5%
+
+	&:nth-child(3)
+		padding-right:0
+		
+.vier > *
+	width:25%
+	padding-right:5%
+
+	&:nth-child(4)
+		padding-right:0
+
+
+.rund
+	border-radius:50%
+
+.luft
+	padding:15px
+.seitenbreite
+	position:relative;left:0;right:0;margin:0;padding: 20px 5%
+
+.click-element
+	display:flex
+	flex-direction:row
+	align-items: strech
+	padding:0
+	margin-bottom: 5px
+
+	i
+		display:block
+		padding:5px
+		background: #222
+		flex:0 1 1
+		width:30px
+		height:30px
+		display:flex
+		align-items:center
+		justify-content: center
+		transition:all 300ms ease-in-out
+		position:relative
+		font-size:1.4em
+		
+	span
+		display:block
+		//background: #444
+		flex:1
+		display:flex
+		align-items:center
+		padding:5px
+		border:1px solid #555
+		font-size:$schrift-size * 1.1
+	&:hover
+		
+		i
+			background: $dunkel
+			animation: pulse 1s infinite ease-in-out
+			
+		span
+
+@keyframes pulse
+	0%, 100%
+		transform:scale(1)
+	50%		
+		transform:scale(1.1)
+
+	
+.fa-ul 
+    

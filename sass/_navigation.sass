@@ -1,0 +1,108 @@
+/* Navigation */
+
+.blog-masthead 
+    box-shadow: inset 0 -2px 5px rgba(0,0,0,.1)
+
+
+.main-nav 
+	.sticky
+		position:fixed
+		top:0
+		left:0
+		right:0
+	
+	ul 
+	    margin: 0
+	    padding: 0 0 0 $abstand-mittel
+
+	li 
+	    list-style: none
+	    display: inline-block
+	    position:relative
+	    
+	li a 
+		position: relative
+		display: inline-block
+		padding: 10px
+		font-weight: 500
+		color: white
+		text-decoration: none
+		font-family:$ueberschrift
+		font-size:1.1rem
+
+
+	li a:hover 
+	    color: white
+	    background:$menuhover
+	li a:hover > .sub-menu li
+		display:block
+
+	li.current_page_item a, .blog-nav li.current_menu_item a 
+		color:#fff 
+	li.current_page_item a:after, .blog-nav li.current_menu_item a:after 
+		position: absolute
+		bottom: 0
+		left: 50%
+		width: 0
+		height: 0
+		margin-left: -5px
+		vertical-align: middle
+		content: " "
+		border-right: 5px solid transparent
+		border-bottom: 5px solid
+		border-left: 5px solid transparent
+
+
+ul.sub-menu
+	padding-left:0
+
+.sub-menu
+	position:absolute
+	top:49px
+	left:0
+	li
+		a:hover
+			background:$gold
+			//box-shadow:-5px 0 0px $pink inset
+	
+// Trigger für Untermenu 
+ul.sub-menu li
+	display:none
+	background:$menuhover
+
+	a
+		width:380px
+		background:inherit	
+
+// Animation Untermenu
+.main-nav li:hover > ul.sub-menu li
+	display:block
+	perspective:1000px
+	opacity: 0
+
+	li
+		opacity: 0
+
+	@for $i from 1 through 10
+		&:nth-child(#{$i})
+			animation: 
+				name:submenu-animation
+				duration:150ms
+				delay:(100ms * $i)
+				timing-function: ease-in-out
+				fill-mode:forwards
+
+	@keyframes submenu-animation
+		0%
+			opacity: 1
+			transform: rotateX(-90deg)
+			transform-origin:top
+			background:black
+
+		100%
+			opacity: 1
+			transform: rotateX(0deg)
+			background:#777	
+
+
+

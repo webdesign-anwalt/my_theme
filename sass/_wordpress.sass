@@ -1,0 +1,118 @@
+/* wordpresskram */
+
+body
+  font-family: $grundschrift
+    color:#555
+  font-size: 100%
+    box-sizing:border-box
+
+h1, h2, h3, h4
+    color:inherit
+    line-height:1em
+    font-family: $ueberschrift
+
+    a
+        color:inherit
+
+        &:hover 
+            color:inherit
+h2
+    padding-bottom:15px
+    margin-top:$abstand-mittel
+    font-family:$ueberschrift
+
+    &:first-child
+        padding-top:$abstand-klein
+h3
+    font-size:$schrift-size*1.1
+    padding-bottom:$abstand-klein
+    padding-top:$abstand-mittel
+    font-family:$ueberschrift
+    line-height:1.5em
+
+    &:first-child
+        padding-top:$abstand-klein
+
+p
+    text-align:justify
+    line-height:1.5em
+    padding-bottom:1em
+
+
+.wrapper
+    max-width:$breite
+    margin:0 auto
+
+#wrapper
+    display:block
+    flex-direction:row
+    justify-content: space-between
+    
+@media screen and (max-width:$handy)
+  h2
+    font-size:$schrift-size*1.4
+  h3
+    font-size:$schrift-size*1.1
+
+
+
+/*
+ * Blog name and description
+ */
+
+.blog-header 
+  padding-top: 20px
+  padding-bottom: 20px
+
+.blog-title 
+  margin-top: 30px
+  margin-bottom: 0
+  font-size: 60px
+  font-weight: normal
+
+.blog-description 
+  font-size: 20px
+  color: #999
+
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main 
+  font-size: 18px
+  line-height: 1.5
+
+
+.post-thumb 
+    margin: 0.4em 0 1.3em
+
+
+/* Pagination */
+.pager 
+  text-align: left
+  margin: 2em 0 3em
+
+.pager li 
+    max-width: 49%
+    display: inline-block
+
+.pager > li > a 
+  width: auto
+  padding: 10px 20px
+  text-align: center
+  border-radius: 30px
+
+
+.archive-title 
+	border: 1px solid #e8e8e8
+	padding: 0.5em
+	margin-bottom: 1.3em
+	background: #fbfbfb
+	font-size: 25px
+
+
+
+
+.sticky 
+.gallery-caption 
+.bypostauthor 

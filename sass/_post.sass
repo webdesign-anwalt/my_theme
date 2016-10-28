@@ -6,6 +6,13 @@
   h2
     color:$dunkel
     font-size:2rem
+
+  ul
+    margin-left: 25px
+
+  ol
+    font-size:inherit
+    color:inherit
   
 .post-entry, #content-blog
   max-width:$breite
@@ -76,11 +83,13 @@ h1.blog-post-title
 .zitat-jens 
     background: rgba(0, 0, 0, 0) url("http://www.ent-schuldigung.de/wp-content/uploads/JensMüller.jpg") no-repeat scroll left top / auto 100%
     padding-left: 150px
+    font-size:inherit
 
 
 .zitat-john 
     background: rgba(0, 0, 0, 0) url("http://www.ent-schuldigung.de/wp-content/uploads/JohnMiehler1-e1412165986650.jpg") no-repeat scroll left top / auto 100%
     padding-left: 150px
+    font-size:inherit
 
 #autorbox
   margin-top:10px
@@ -128,7 +137,7 @@ img.avatar
     border-radius: 50%
 
 cite.fn 
-    font-size: 24px
+    font-size: $schrift-size
 
 span.says 
     display: none
@@ -186,3 +195,4 @@ input#s
   max-width:$breite
   margin:0 auto
   position:relative
+  margin:$abstand-mittel 0

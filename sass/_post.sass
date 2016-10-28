@@ -102,12 +102,60 @@ h1.blog-post-title
   margin:0 10px 10px 0
   float:left
 
+// Hinweise auf Zwischenüberschriften und verwandte Artikel
+// fixiert am linken Rand
 
 .linkbereich 
   width:200px;
-  float : right
+  height:auto
   padding:5px
   margin-left:$abstand-klein
+  position:fixed
+  top:250px
+  left:0px
+  background: $dunkel
+  color:white
+  font-size:$schrift-size *0.8
+
+  &:before
+    content:'\f0ca'
+    font-family: 'FontAwesome'
+    font-size:1.8rem
+    position :absolute
+    right:$abstand-klein
+    top:$abstand-klein
+
+
+  h2
+    color:white
+
+  a:before // Symbole vor Links
+    content:'\f124 '
+    font-family: 'FontAwesome'
+    display: inline-block
+    padding-right:5px
+
+@media screen and (max-width:1200px)
+  .linkbereich
+    transform: translateX(-105%)
+    transition: all 0.5s ease-in-out
+    cursor:pointer
+
+    &:before
+      position :absolute    
+      right:-50px
+      top:-10px
+      display: block
+      background:$dunkel
+      padding:10px
+      border-radius:50%
+      transition: all 0.5s ease-in-out
+    &:hover
+      transform: translateX(0%)
+      &:before
+        right:-20px
+
+
 
 @media screen and (max-width:$handy)
   .alignleft

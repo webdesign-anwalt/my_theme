@@ -74,7 +74,7 @@ ul > ul {
 }
 
 .dunkel-verlauf, .link-ecke a:hover {
-  background: linear-gradient(to bottom, #006180 0%, #005272 100%);
+  background: linear-gradient(to right, #006180 10%, #49a09d 90%);
   color: white;
 }
 
@@ -514,7 +514,7 @@ p {
 
 .main-nav li a:hover {
   color: white;
-  background: #777;
+  background: #49a09d;
 }
 
 .main-nav li a:hover > .sub-menu li {
@@ -550,18 +550,22 @@ ul.sub-menu {
   left: 0;
 }
 
+.sub-menu li {
+  background: #49a09d;
+}
+
 .sub-menu li a:hover {
   background: #ae9447;
 }
 
 ul.sub-menu li {
   display: none;
-  background: #777;
+  background: #49a09d;
 }
 
 ul.sub-menu li a {
   width: 380px;
-  background: #777;
+  background: #49a09d;
 }
 
 .main-nav li:hover > ul.sub-menu li {

@@ -39,31 +39,54 @@
 
 .kontakt-button2 a
   display: table
-  margin:10px auto
-  padding:10px
-  border: 1px solid black
+  font-size: 1.2rem
+  margin:$abstand-mittel auto
+  padding:10px 15px
   text-decoration:none
   text-align:center
-  transition: all 0.6s ease-in-out 0s
-  color:black
+  transition: all 0.5s ease-in-out 
+  @extend .dunkel
+  border-radius:19px
+  color:white
 
 .kontakt-button2 a:hover
-  color:white
-  background-color:orange
   box-shadow: 0 4px 2px  gray
+  transform:scale(1.1)
 
 .link-ecke a::after 
     content: " ▶"
+    display:inline-block
+    margin-left:5px
 
 .link-ecke    
+  
 	a 
-	    background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0
-	    bottom: 0
-	    color: white
-	    display: block
-	    padding: 3px 10px
-	    position: absolute
-	    right: 0
+    @extend .dunkel
+    bottom: 0
+    color: white
+    display: table-cell
+    padding: 3px 10px
+    float:right
+    margin:$abstand-mittel 0
+    transition:all 0.5s ease-in-out
+    
+    &:after
+        clear:both
+        
+    &:hover
+      @extend .dunkel-verlauf
+      box-shadow: 0 0 0 2px white, 0 0 0 4px $dunkel
 
-	&:hover
-		background:black
+      &:after
+        animation:animierte-pfeile 1s infinite
+
+    	
+@keyframes animierte-pfeile
+  0%
+    transform:translate(0px,0px)
+    opacity: 1
+  100%
+    transform:translate(10px,0px)
+    opacity: 0
+
+    

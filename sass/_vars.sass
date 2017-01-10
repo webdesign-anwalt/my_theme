@@ -3,27 +3,26 @@ $pink:#e91e63
 $purple:#9c27b0
 $indigo:#303f9f
 $lila-blau: linear-gradient(90deg, #5f2c82 10%, #49a09d 90%)
-$grün-gelb: linear-gradient(90deg, #3ca55c 10%, #b5ac49 90%)
+$grün-gelb: linear-gradient(0deg, #3ca55c 10%, #b5ac49 90%)
 $orange-pink:linear-gradient(90deg, #ff512f 10%, #dd2476 90%)
 
-$hell: #cde855
+$hell: #ccc
 $dunkel: #006180
+
 $grün: #a7c520
-$mittel: #4C5562
-$gold:#ae9447
-$menuhover: #777
-$titelfarbe : orange
-$grundschrift: 'roboto' 
-$schrift-size: 1.1rem
-$schrift-scale: 1vw
-$ueberschrift: 'oswald'
+$gold: #ae9447
+$menuhover:#2d7c95 
 
 $abstand-klein: 10px
 $abstand-mittel: 30px
 $abstand-gross: 120px
 $breite:60vw
 
-
+.dunkel-verlauf
+	background: linear-gradient(to bottom, #006180 0%,#005272 100%)
+	color:white
+	h2
+		color:white
 .gold
 	background: linear-gradient(to bottom, #d4af37 0%,#ae9447 100%)
 
@@ -31,10 +30,14 @@ $breite:60vw
 .dunkel
 	background:$dunkel
 	color:white
-
+	h2
+		color:white
 .mittel
-	background:$mittel
+	background:&grün-gelb
 	color:white
+
+	h2
+		color:white
 
 .hell
 	background:$hell
@@ -46,6 +49,8 @@ $breite:60vw
 
 .dunkel-text
 	color:$dunkel
+p 
+	font-size: $schrift-size
 
 /* Mediaquerys */
 $handy:450px

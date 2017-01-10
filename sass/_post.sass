@@ -26,12 +26,7 @@
 #content
   margin:0 auto
   max-width:$breite
-
-@media screen and (max-width:$handy)
-  #content, .hentry, .post-entry
-    max-width: 100%
-    width:100%
-    padding:5px
+  color:#555
 
 .single.blog-post 
 		margin:0
@@ -76,13 +71,6 @@ h2 + h3
 .nocomments 
 		margin-top: 2em
 
-@media screen and (max-width:$handy)
-  .post-title 
-
-  .post-entry
-    max-width:auto
-    padding:8px
-
 
 .zitat-jens 
     background: rgba(0, 0, 0, 0) url("http://www.ent-schuldigung.de/wp-content/uploads/JensMüller.jpg") no-repeat scroll left top / auto 100%
@@ -105,6 +93,16 @@ h2 + h3
 .alignleft
   margin:0 10px 10px 0
   float:left
+
+
+@media screen and (max-width:$handy)
+  #content, .hentry, .post-entry
+    max-width: 90vw
+    padding:5px
+
+  .post-title 
+    font-size:2rem
+
 
 // Hinweise auf Zwischenüberschriften und verwandte Artikel
 // fixiert am linken Rand
@@ -159,7 +157,7 @@ h2 + h3
       padding:5px 10px
       border-radius:50%
       transition: all 0.5s ease-in-out
-    &:hover, :focus
+    &:hover, :active
       transform: translateX(0%)
     &:hover:before
       right:-20px
@@ -253,3 +251,16 @@ input#s
   margin:0 auto
   position:relative
   margin:$abstand-mittel 0
+
+.karten  //verändert .flexkarten und zeigt diese als Karten
+  div
+    position:relative
+
+    a:after
+      content:'\f138'
+      font-family: FontAwesome
+      font-size:25px
+      bottom:$abstand-klein
+      right:$abstand-mittel
+      position:absolute
+      color:$dunkel

@@ -54,7 +54,8 @@ input, select {
 p, li {
   text-align: justify;
   line-height: 1.5em;
-  font-size: 1.2em;
+  font-size: 1.1em;
+
 }
 
 td {
@@ -72,18 +73,26 @@ ul > ul {
   margin-left: 20px;
 }
 
+.dunkel-verlauf, .link-ecke a:hover {
+  background: linear-gradient(to bottom, #006180 0%, #005272 100%);
+}
+
 .gold {
   background: linear-gradient(to bottom, #d4af37 0%, #ae9447 100%);
 }
 
 /* Farbkombinationen */
-.dunkel {
+.dunkel, .kontakt-button2 a, .link-ecke a {
   background: #006180;
   color: white;
 }
 
 .mittel {
   background: #4C5562;
+  color: white;
+}
+
+.mittel h2 {
   color: white;
 }
 
@@ -492,7 +501,7 @@ p {
 
 .main-nav li a:hover {
   color: white;
-  background: #777;
+  background: #2D7C95;
 }
 
 .main-nav li a:hover > .sub-menu li {
@@ -534,12 +543,12 @@ ul.sub-menu {
 
 ul.sub-menu li {
   display: none;
-  background: #777;
+  background: #2D7C95;
 }
 
 ul.sub-menu li a {
   width: 380px;
-  background: inherit;
+  background: #2D7C95;
 }
 
 .main-nav li:hover > ul.sub-menu li {
@@ -686,10 +695,10 @@ ul.sub-menu li a {
 @-webkit-keyframes submenu-animation {
   0% {
     opacity: 1;
-    -webkit-transform: rotateX(-90deg);
-            transform: rotateX(-90deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
+    -webkit-transform: rotateY(-90deg);
+            transform: rotateY(-90deg);
+    -webkit-transform-origin: left;
+            transform-origin: left;
     background: black;
   }
   100% {
@@ -703,10 +712,10 @@ ul.sub-menu li a {
 @keyframes submenu-animation {
   0% {
     opacity: 1;
-    -webkit-transform: rotateX(-90deg);
-            transform: rotateX(-90deg);
-    -webkit-transform-origin: top;
-            transform-origin: top;
+    -webkit-transform: rotateY(-90deg);
+            transform: rotateY(-90deg);
+    -webkit-transform-origin: left;
+            transform-origin: left;
     background: black;
   }
   100% {
@@ -714,6 +723,21 @@ ul.sub-menu li a {
     -webkit-transform: rotateX(0deg);
             transform: rotateX(0deg);
     background: #777;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sub-menu {
+    position: fixed;
+    top: 49px;
+    left: 0;
+  }
+  ul.sub-menu li {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  ul.sub-menu li a {
+    width: 100%;
+    padding: inherit 8px;
   }
 }
 
@@ -1192,12 +1216,7 @@ label.screen-reader-text {
 }
 
 .tabellenkopf img {
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  
   align: center;
   border-radius: 100%;
 }
@@ -1287,37 +1306,76 @@ label.screen-reader-text {
 
 .kontakt-button2 a {
   display: table;
-  margin: 10px auto;
-  padding: 10px;
-  border: 1px solid black;
+  font-size: 1.2rem;
+  margin: 50px auto 90px;
+  padding: 10px 15px;
   text-decoration: none;
   text-align: center;
-  transition: all 0.6s ease-in-out 0s;
-  color: black;
+  transition: all 0.5s ease-in-out;
+  border-radius: 19px;
+  color: white;
 }
 
 .kontakt-button2 a:hover {
-  color: white;
-  background-color: orange;
   box-shadow: 0 4px 2px  gray;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .link-ecke a::after {
   content: " ▶";
+  display: inline-block;
+  margin-left: 5px;
 }
 
 .link-ecke a {
-  background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
   bottom: 0;
   color: white;
-  display: block;
+  display: table-cell;
   padding: 3px 10px;
-  position: absolute;
-  right: 0;
+  float: right;
+  margin: 30px 0;
+  transition: all 0.5s ease-in-out;
 }
 
-.link-ecke:hover {
-  background: black;
+.link-ecke a:after {
+  clear: both;
+}
+
+.link-ecke a:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #006180;
+}
+
+.link-ecke a:hover:after {
+  -webkit-animation: animierte-pfeile 1s infinite;
+          animation: animierte-pfeile 1s infinite;
+}
+
+@-webkit-keyframes animierte-pfeile {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(10px, 0px);
+            transform: translate(10px, 0px);
+    opacity: 0;
+  }
+}
+
+@keyframes animierte-pfeile {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(10px, 0px);
+            transform: translate(10px, 0px);
+    opacity: 0;
+  }
 }
 
 /* Blog posts und Comments */
@@ -1353,14 +1411,6 @@ label.screen-reader-text {
 #content {
   margin: 0 auto;
   max-width: 60vw;
-}
-
-@media screen and (max-width: 450px) {
-  #content, .hentry, .post-entry {
-    max-width: 100%;
-    width: 100%;
-    padding: 5px;
-  }
 }
 
 .single.blog-post {
@@ -1417,13 +1467,6 @@ h2 + h3 {
   margin-top: 2em;
 }
 
-@media screen and (max-width: 450px) {
-  .post-entry {
-    max-width: auto;
-    padding: 8px;
-  }
-}
-
 .zitat-jens {
   background: transparent url("http://www.ent-schuldigung.de/wp-content/uploads/JensMüller.jpg") no-repeat scroll left top/auto 100%;
   padding-left: 150px;
@@ -1447,6 +1490,16 @@ h2 + h3 {
 .alignleft {
   margin: 0 10px 10px 0;
   float: left;
+}
+
+@media screen and (max-width: 450px) {
+  #content, .hentry, .post-entry {
+    max-width: 90vw;
+    padding: 5px;
+  }
+  .post-title {
+    font-size: 2rem;
+  }
 }
 
 .linkbereich {
@@ -1511,7 +1564,7 @@ h2 + h3 {
     border-radius: 50%;
     transition: all 0.5s ease-in-out;
   }
-  .linkbereich:hover, .linkbereich :focus {
+  .linkbereich:hover, .linkbereich :active {
     -webkit-transform: translateX(0%);
         -ms-transform: translateX(0%);
             transform: translateX(0%);
@@ -1617,6 +1670,20 @@ input#s {
   margin: 0 auto;
   position: relative;
   margin: 30px 0;
+}
+
+.karten div {
+  position: relative;
+}
+
+.karten div a:after {
+  content: '\f138';
+  font-family: FontAwesome;
+  font-size: 25px;
+  bottom: 10px;
+  right: 30px;
+  position: absolute;
+  color: #006180;
 }
 
 /* Seiten */

@@ -73,7 +73,7 @@ ul.sub-menu li
 
 	a
 		width:380px
-		background:inherit	
+		background:$menuhover	
 
 // Animation Untermenu
 .main-nav li:hover > ul.sub-menu li
@@ -96,8 +96,8 @@ ul.sub-menu li
 	@keyframes submenu-animation
 		0%
 			opacity: 1
-			transform: rotateX(-90deg)
-			transform-origin:top
+			transform: rotateY(-90deg)
+			transform-origin:left
 			background:black
 
 		100%
@@ -105,5 +105,17 @@ ul.sub-menu li
 			transform: rotateX(0deg)
 			background:#777	
 
+// Mediaquery Untermenü
+@media screen and (max-width:$handy)
+	.sub-menu
+		position:fixed
+		top:49px
+		left:0
 
+	ul.sub-menu li
+		background: rgba(0,0,0,0.6)
+		a
+			width:100%
+			padding:inherit 8px
 
+	

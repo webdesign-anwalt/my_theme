@@ -1060,7 +1060,8 @@ input#sidebar-toggle:checked ~ label.toggle:before {
   transition: all 0.5s ease-in;
   opacity: 0;
   background: #006180;
-  padding: 10px;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
 .click-element:hover .info-slider {
@@ -1203,6 +1204,11 @@ label.screen-reader-text {
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 3px;
+}
+
+/* click elemente */
+.click-element span {
+  border: none;
 }
 
 /* Formular */

@@ -67,7 +67,7 @@ if ( defined( 'WPSEO_VERSION' ) ) {
     <?php get_sidebar('top'); ?>
 				<?php wp_nav_menu(array(
 				    'container'       => 'div',
-						'container_class'	=> 'main-nav dunkel',
+						'container_class'	=> 'main-nav dunkel-verlauf',
 						'fallback_cb'	  =>  'responsive_fallback_menu',
 						'theme_location'  => 'header-menu')
 					); 
